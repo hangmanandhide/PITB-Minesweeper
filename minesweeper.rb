@@ -1,4 +1,5 @@
 require_relative 'board'
+require 'byebug'
 
 class Minesweeper
   GAME_MODES = {
@@ -11,11 +12,13 @@ class Minesweeper
   def self.setup
     puts "Welcome to Minesweeper! Please choose from the following:"
     
-    board = Board.new(get_mode)
+    mode = get_mode
+    debugger
+    board = Minesweeper.new(GAME_MODES[mode])
 
   end
   
-  def get_mode
+  def self.get_mode
     mode = nil
     puts "Type 'easy' for a 9x9 board containing 10 bombs."
     puts "Type 'medium' for a 16x16 board containing 40 bombs."
@@ -32,6 +35,7 @@ class Minesweeper
   end
 
   def initialize(game_mode)
+    
     size, bombs = game_mode
     @board = Board.new(size, bombs) 
   end
@@ -49,17 +53,22 @@ class Minesweeper
       board.reveal
     end
   end
-  
+
   def game_over
-    has_won? || has.lost?
+    if has_won?
+      return true
+    elsif has.lost?
+      return true
+    end
+    false
   end
 
   def has_won?
-    board.won?
+    @board.won?
   end
 
   def has_lost?
-    board.lost?
+    @board.lost?
   end
 
   def get_move
@@ -102,7 +111,15 @@ class Minesweeper
   def take_turn
     board.render
     action, pos = get_move
-    board[pos] = action
+    tile = board[pos]
+
+    case action
+      when 'f'
+        tile.flag_tile
+      when 'r'
+        tile.reveal
+    end
+    
   end
 
   #reveal:
@@ -129,6 +146,7 @@ class Minesweeper
 
 end
 
-if __FILE__ ==$PROGRAM_NAME
+if __FILE__ == $PROGRAM_NAME
   game = Minesweeper.setup
   game.run
+end
