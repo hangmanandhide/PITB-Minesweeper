@@ -22,7 +22,7 @@ class Minesweeper
     mode = nil
     puts "Type 'easy' for a 9x9 board containing 10 bombs."
     puts "Type 'medium' for a 16x16 board containing 40 bombs."
-    puts "Type 'hard for a 30x30 board containing 145 bombs."
+    puts "Type 'hard' for a 30x30 board containing 145 bombs."
 
       until mode
         mode = gets.chomp 
@@ -41,9 +41,7 @@ class Minesweeper
   end
 
   def run
-    until game_over
-      take_turn
-    end
+    take_turn until game_over
     
     if has_won?
       puts "Congrats, you managed not to blow yourself up."
@@ -52,12 +50,10 @@ class Minesweeper
       puts "KABOOM! Ya lost a foot... and the game! Game over."
       @board.reveal
     end
-  endß
+  end
 
   def game_over
-    if has_won?
-      return true
-    elsif has.lost?
+    if has_won? || has_lost?
       return true
     end
     false
@@ -107,6 +103,7 @@ class Minesweeper
   end
 
   def parse_pos(pos)
+    return false if !pos.include?(',')
     pos.split(',').map! { |char| Integer(char) }
   end
   
@@ -122,7 +119,7 @@ class Minesweeper
       when 'f'
         tile.flag_tile
       when 'r'
-        tile.render
+        tile.show
     end
     
   end

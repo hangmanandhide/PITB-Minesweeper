@@ -24,6 +24,10 @@ class Board
     until set_bombs == @bombs
       pos = Array.new(2) { rand(@size) }
       selected_tile = self[pos]
+      
+      if selected_tile.bombed?
+        next
+      end
 
       selected_tile.set_bomb
       set_bombs += 1
@@ -31,15 +35,14 @@ class Board
   end
 
   def won?
-    @grid.each do |row|
-      row.all? { |tile| tile.revealed? && !tile.bombed? }
-    end
+    # debugger
+    @grid.flatten.all? { |tile| tile.revealed? != !tile.bombed? }
+    
   end
 
   def lost?
-    @grid.each do |row|
-      row.any? {|tile| tile.bombed? || tile.revealed? }
-    end
+    @grid.flatten.any? {|tile| tile.bombed? == tile.revealed? }
+    
   end
 
   def [](pos)
@@ -48,7 +51,8 @@ class Board
   end
 
   def reveal
-    puts "  #{(0..8).to_a.join(" ")}"
+    max = @size - 1
+    puts "  #{(0..max).to_a.join(" ")}"
     @grid.each_with_index do |row, idx|
       puts "#{idx} #{row.map(&:reveal).join(" ")}"
     end
