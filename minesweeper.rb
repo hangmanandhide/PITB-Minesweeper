@@ -11,7 +11,7 @@ class Minesweeper
   def self.setup
     puts "Welcome to Minesweeper! Please choose from the following:"
     
-    new_game = Board.new(get_mode)
+    board = Board.new(get_mode)
 
   end
   
@@ -37,13 +37,29 @@ class Minesweeper
   end
 
   def run
-    take_turn until has_won?
-    board.render
-    puts "Congrats, you managed not to blow yourself up."
+    until game_over
+      board.render
+      take_turn
+    end
+    
+    if has_won?
+      puts "Congrats, you managed not to blow yourself up."
+    elsif has_lost?
+      puts "KABOOM! Ya lost a foot... and the game! Game over."
+      board.reveal
+    end
+  end
+  
+  def game_over
+    has_won? || has.lost?
   end
 
   def has_won?
-    board.solved?
+    board.won?
+  end
+
+  def has_lost?
+    board.lost?
   end
 
   def get_move
@@ -88,6 +104,7 @@ class Minesweeper
     action, pos = get_move
     board[pos] = action
   end
+
   #reveal:
   # Start by supporting a single grid size: 9x9; randomly seed it with bombs. The user has two choices each turn:
 

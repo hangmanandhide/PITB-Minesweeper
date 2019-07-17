@@ -28,7 +28,16 @@ class Board
     end
   end
 
+  def won?
+    @grid each do |row|
+      row.all? { |tile| tile.revealed? && !tile.bombed? }
+  end
 
+  def lost?
+    @grid each do |row|
+      row.any? {|tile| tile.bombed? || tile.revealed? }
+    end
+  end
 
   def [](pos)
     row, col = pos
