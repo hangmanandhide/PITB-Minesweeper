@@ -1,11 +1,39 @@
-class Minesweeper
+require_relative 'board'
 
-  def self.setup_board
+class Minesweeper
+  GAME_MODES = {
+    'easy' => [9, 10],
+    'medium' => [16, 40],
+    'hard' => [30, 145],
+    'uuddlrlrba' => [9, 1],
+  }
+
+  def self.setup
+    puts "Welcome to Minesweeper! Please choose from the following:"
     
+    new_game = Board.new(get_mode)
+
   end
   
-  def initialize
+  def get_mode
+    mode = nil
+    puts "Type 'easy' for a 9x9 board containing 10 bombs."
+    puts "Type 'medium' for a 16x16 board containing 40 bombs."
+    puts "Type 'hard for a 30x30 board containing 145 bombs."
 
+      until mode
+        mode = gets.chomp 
+        unless GAME_MODES.has_key?(mode.downcase)
+          puts "Sorry! that is not a valid game mode! Please try again."
+          mode = nil  
+        end
+      end
+      mode
+  end
+
+  def initialize(game_mode)
+    size, bombs = game_mode
+    @board = Board.new(size, bombs) 
   end
 
   def run
@@ -85,5 +113,5 @@ class Minesweeper
 end
 
 if __FILE__ ==$PROGRAM_NAME
-  game = Minesweeper.setup_board
+  game = Minesweeper.setup
   game.run
