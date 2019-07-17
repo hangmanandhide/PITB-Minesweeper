@@ -13,7 +13,6 @@ class Minesweeper
     puts "Welcome to Minesweeper! Please choose from the following:"
     
     mode = get_mode
-    # debugger
     board = Minesweeper.new(GAME_MODES[mode])
 
   end
@@ -111,7 +110,6 @@ class Minesweeper
   def take_turn
     @board.render
     action, pos = get_move
-    # debugger
     
     tile = @board[pos]
 

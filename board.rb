@@ -35,13 +35,12 @@ class Board
   end
 
   def won?
-    # debugger
     @grid.flatten.all? { |tile| tile.revealed? != !tile.bombed? }
     
   end
 
   def lost?
-    @grid.flatten.any? {|tile| tile.bombed? == tile.revealed? }
+    @grid.flatten.any? {|tile| tile.bombed? && tile.revealed? }
     
   end
 
