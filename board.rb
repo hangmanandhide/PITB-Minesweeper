@@ -58,7 +58,8 @@ class Board
   end
 
   def render
-    puts "  #{(0..8).to_a.join(" ")}"
+    max = @size - 1
+    puts "  #{(0..max).to_a.join(" ")}"
     @grid.each_with_index do |row, idx|
       puts "#{idx} #{row.map(&:render).join(" ")}"
     end
