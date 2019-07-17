@@ -3,6 +3,8 @@ require_relative 'tile'
 
 class Board
 
+  attr_reader :size
+
   def initialize(size, bombs)
     @size = size
     @bombs = bombs

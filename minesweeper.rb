@@ -13,7 +13,7 @@ class Minesweeper
     puts "Welcome to Minesweeper! Please choose from the following:"
     
     mode = get_mode
-    debugger
+    # debugger
     board = Minesweeper.new(GAME_MODES[mode])
 
   end
@@ -42,17 +42,17 @@ class Minesweeper
 
   def run
     until game_over
-      board.render
       take_turn
     end
     
     if has_won?
       puts "Congrats, you managed not to blow yourself up."
+      @board.reveal
     elsif has_lost?
       puts "KABOOM! Ya lost a foot... and the game! Game over."
-      board.reveal
+      @board.reveal
     end
-  end
+  endß
 
   def game_over
     if has_won?
@@ -89,35 +89,40 @@ class Minesweeper
       action = gets.chomp
     end
 
-    [move, pos]
+    [action, pos]
   end
 
-  def valid_action?(move)
-    if action.downcase != 'f' || action.downcase != 'r'
-      return false
+  def valid_action?(action)
+      if action.downcase == 'f'
+        true
+      elsif action.downcase == 'r'
+        true
+      else
+        false
     end
-    action.downcase
   end
 
   def valid_pos?(pos)
-    pos.is_a?(Array) && pos.length == 2 && pos.all? { |v| v.between?(0, board.size - 1) }
+    pos.is_a?(Array) && pos.length == 2 && pos.all? { |v| v.between?(0, @board.size - 1) }
   end
 
   def parse_pos(pos)
-    pos.split('').map! { |char| Integer(char) }
+    pos.split(',').map! { |char| Integer(char) }
   end
   
 
   def take_turn
-    board.render
+    @board.render
     action, pos = get_move
-    tile = board[pos]
+    # debugger
+    
+    tile = @board[pos]
 
     case action
       when 'f'
         tile.flag_tile
       when 'r'
-        tile.reveal
+        tile.render
     end
     
   end

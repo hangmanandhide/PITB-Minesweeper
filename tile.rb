@@ -57,6 +57,8 @@ class Tile
       '?'
     elsif revealed?
       neighbor_bomb_count == 0 ? "_" : neighbor_bomb_count.to_s
+    else
+      "*"
     end
 
   end
@@ -77,6 +79,15 @@ class Tile
       end
   end
   
+  def inspect
+    {
+      'pos' => @pos,
+      'flagged' => @flagged,
+      'bombed' => @bombed,
+      'revealed' => @revealed
+    }.inspect
+  end
+
   #reveal
   #neighbors
   #neighbor_bomb_count
