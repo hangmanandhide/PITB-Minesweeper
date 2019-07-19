@@ -1,5 +1,6 @@
 require_relative 'board'
 require 'byebug'
+require 'yaml'
 
 class Minesweeper
   GAME_MODES = {
@@ -13,7 +14,13 @@ class Minesweeper
     puts "Welcome to Minesweeper! Please choose from the following:"
     
     mode = get_mode
-    board = Minesweeper.new(GAME_MODES[mode])
+    # debugger
+    case mode
+      when 'load'
+        
+        else
+          board = Minesweeper.new(GAME_MODES[mode])
+    end
 
   end
   
@@ -22,10 +29,11 @@ class Minesweeper
     puts "Type 'easy' for a 9x9 board containing 10 bombs."
     puts "Type 'medium' for a 16x16 board containing 40 bombs."
     puts "Type 'hard' for a 30x30 board containing 145 bombs."
+    puts "Type 'load' to load a previously saved game."
 
       until mode
         mode = gets.chomp 
-        unless GAME_MODES.has_key?(mode.downcase)
+        unless GAME_MODES.has_key?(mode.downcase) || mode.downcase == 'load'
           puts "Sorry! that is not a valid game mode! Please try again."
           mode = nil  
         end
@@ -34,9 +42,21 @@ class Minesweeper
   end
 
   def initialize(game_mode)
-    
-    size, bombs = game_mode
-    @board = Board.new(size, bombs) 
+    if game_mode != 'saved_game'
+      size, bombs = game_mode
+      @board = Board.new(size, bombs)
+    else
+      load_saved_game(game_mode)
+    end
+  end
+
+  def load_saved_game(saved_game)
+    YAML::load(saved_game)
+  end
+
+  def save_game
+    saved_game = self.to_yaml
+    true
   end
 
   def run
@@ -79,6 +99,7 @@ class Minesweeper
 
     until action && valid_action?(action)
       puts "Please choose your action ('r' to reveal a square, 'f' to flag/unflag a square)"
+      puts "You may also save your game by typing 's'"
       puts "Note: you cannot reveal a flagged square until you unflag it."
       print '>'
       action = gets.chomp
@@ -91,6 +112,8 @@ class Minesweeper
       if action.downcase == 'f'
         true
       elsif action.downcase == 'r'
+        true
+      elsif action.downcase == 's'
         true
       else
         false
@@ -118,6 +141,8 @@ class Minesweeper
         tile.flag_tile
       when 'r'
         tile.show
+      when 's'
+        save_game
     end
     
   end

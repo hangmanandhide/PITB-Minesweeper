@@ -53,7 +53,7 @@ class Board
     max = @size - 1
     puts "  #{(0..max).to_a.join(" ")}"
     @grid.each_with_index do |row, idx|
-      puts "#{idx} #{row.map(&:reveal).join(" ")}"
+      puts "#{idx} #{row.map(&:reveal).join("  ")}"
     end
   end
 
