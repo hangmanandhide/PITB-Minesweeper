@@ -93,9 +93,9 @@ class Tile
      #2. if tile has a bomb
      # a - if revealed, X, else B
       if flagged?
-        bombed? ? 'F' : '/'
+        bombed? ? "F" : "/"
       elsif bombed?
-        revealed? ? 'X' : 'B'
+        revealed? ? "X" : "B"
       else
         "_"
       end

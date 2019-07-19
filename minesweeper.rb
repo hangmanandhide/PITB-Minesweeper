@@ -11,6 +11,7 @@ class Minesweeper
   }
 
   def self.setup
+    system("clear")
     puts "Welcome to Minesweeper! Please choose from the following:"
     
     mode = get_mode
@@ -61,11 +62,13 @@ class Minesweeper
     take_turn until game_over
     
     if has_won?
+      system("clear")
+      @board.reveal
       puts "Congrats, you managed not to blow yourself up."
-      @board.reveal
     elsif has_lost?
-      puts "KABOOM! Ya lost a foot... and the game! Game over."
+      system("clear")
       @board.reveal
+      puts "KABOOM! Ya lost a foot... and the game! Game over."
     end
   end
 
@@ -129,6 +132,7 @@ class Minesweeper
   
 
   def take_turn
+    system("clear")
     @board.render
     action, pos = get_move
     
