@@ -8,7 +8,7 @@ board: &1 !ruby/object:Board
       pos:
       - 0
       - 0
-      bombed: false
+      bombed: true
       flagged: false
       revealed: false
     - !ruby/object:Tile
@@ -32,7 +32,7 @@ board: &1 !ruby/object:Board
       pos:
       - 0
       - 3
-      bombed: false
+      bombed: true
       flagged: false
       revealed: false
     - !ruby/object:Tile
@@ -88,7 +88,7 @@ board: &1 !ruby/object:Board
       pos:
       - 1
       - 1
-      bombed: true
+      bombed: false
       flagged: false
       revealed: false
     - !ruby/object:Tile
@@ -122,13 +122,13 @@ board: &1 !ruby/object:Board
       - 5
       bombed: false
       flagged: false
-      revealed: false
+      revealed: true
     - !ruby/object:Tile
       board: *1
       pos:
       - 1
       - 6
-      bombed: false
+      bombed: true
       flagged: false
       revealed: false
     - !ruby/object:Tile
@@ -152,7 +152,7 @@ board: &1 !ruby/object:Board
       pos:
       - 2
       - 0
-      bombed: false
+      bombed: true
       flagged: false
       revealed: false
     - !ruby/object:Tile
@@ -160,7 +160,7 @@ board: &1 !ruby/object:Board
       pos:
       - 2
       - 1
-      bombed: false
+      bombed: true
       flagged: false
       revealed: false
     - !ruby/object:Tile
@@ -168,7 +168,7 @@ board: &1 !ruby/object:Board
       pos:
       - 2
       - 2
-      bombed: true
+      bombed: false
       flagged: false
       revealed: false
     - !ruby/object:Tile
@@ -192,21 +192,453 @@ board: &1 !ruby/object:Board
       pos:
       - 2
       - 5
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 2
+      - 6
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 2
+      - 7
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 2
+      - 8
+      bombed: false
+      flagged: false
+      revealed: false
+  - - !ruby/object:Tile
+      board: *1
+      pos:
+      - 3
+      - 0
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 3
+      - 1
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 3
+      - 2
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 3
+      - 3
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 3
+      - 4
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 3
+      - 5
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 3
+      - 6
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 3
+      - 7
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 3
+      - 8
+      bombed: true
+      flagged: false
+      revealed: false
+  - - !ruby/object:Tile
+      board: *1
+      pos:
+      - 4
+      - 0
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 4
+      - 1
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 4
+      - 2
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 4
+      - 3
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 4
+      - 4
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 4
+      - 5
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 4
+      - 6
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 4
+      - 7
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 4
+      - 8
+      bombed: false
+      flagged: false
+      revealed: false
+  - - !ruby/object:Tile
+      board: *1
+      pos:
+      - 5
+      - 0
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 5
+      - 1
+      bombed: true
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 5
+      - 2
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 5
+      - 3
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 5
+      - 4
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 5
+      - 5
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 5
+      - 6
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 5
+      - 7
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 5
+      - 8
+      bombed: false
+      flagged: false
+      revealed: false
+  - - !ruby/object:Tile
+      board: *1
+      pos:
+      - 6
+      - 0
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 6
+      - 1
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 6
+      - 2
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 6
+      - 3
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 6
+      - 4
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 6
+      - 5
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 6
+      - 6
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 6
+      - 7
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 6
+      - 8
+      bombed: false
+      flagged: false
+      revealed: false
+  - - !ruby/object:Tile
+      board: *1
+      pos:
+      - 7
+      - 0
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 7
+      - 1
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 7
+      - 2
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 7
+      - 3
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 7
+      - 4
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 7
+      - 5
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 7
+      - 6
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 7
+      - 7
+      bombed: true
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 7
+      - 8
+      bombed: false
+      flagged: false
+      revealed: false
+  - - !ruby/object:Tile
+      board: *1
+      pos:
+      - 8
+      - 0
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 8
+      - 1
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 8
+      - 2
+      bombed: true
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 8
+      - 3
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 8
+      - 4
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 8
+      - 5
+      bombed: false
+      flagged: false
+      revealed: false
+    - !ruby/object:Tile
+      board: *1
+      pos:
+      - 8
+      - 6
       bombed: false
       flagged: false
       revealed: true
     - !ruby/object:Tile
       board: *1
       pos:
-      - 2
-      - 6
-      bombed: true
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 2
+      - 8
       - 7
       bombed: false
       flagged: false
@@ -214,440 +646,8 @@ board: &1 !ruby/object:Board
     - !ruby/object:Tile
       board: *1
       pos:
-      - 2
+      - 8
       - 8
       bombed: true
-      flagged: false
-      revealed: false
-  - - !ruby/object:Tile
-      board: *1
-      pos:
-      - 3
-      - 0
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 3
-      - 1
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 3
-      - 2
-      bombed: true
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 3
-      - 3
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 3
-      - 4
-      bombed: true
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 3
-      - 5
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 3
-      - 6
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 3
-      - 7
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 3
-      - 8
-      bombed: false
-      flagged: false
-      revealed: false
-  - - !ruby/object:Tile
-      board: *1
-      pos:
-      - 4
-      - 0
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 4
-      - 1
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 4
-      - 2
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 4
-      - 3
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 4
-      - 4
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 4
-      - 5
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 4
-      - 6
-      bombed: true
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 4
-      - 7
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 4
-      - 8
-      bombed: false
-      flagged: false
-      revealed: false
-  - - !ruby/object:Tile
-      board: *1
-      pos:
-      - 5
-      - 0
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 5
-      - 1
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 5
-      - 2
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 5
-      - 3
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 5
-      - 4
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 5
-      - 5
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 5
-      - 6
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 5
-      - 7
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 5
-      - 8
-      bombed: false
-      flagged: false
-      revealed: false
-  - - !ruby/object:Tile
-      board: *1
-      pos:
-      - 6
-      - 0
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 6
-      - 1
-      bombed: true
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 6
-      - 2
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 6
-      - 3
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 6
-      - 4
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 6
-      - 5
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 6
-      - 6
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 6
-      - 7
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 6
-      - 8
-      bombed: false
-      flagged: false
-      revealed: false
-  - - !ruby/object:Tile
-      board: *1
-      pos:
-      - 7
-      - 0
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 7
-      - 1
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 7
-      - 2
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 7
-      - 3
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 7
-      - 4
-      bombed: true
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 7
-      - 5
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 7
-      - 6
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 7
-      - 7
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 7
-      - 8
-      bombed: false
-      flagged: false
-      revealed: false
-  - - !ruby/object:Tile
-      board: *1
-      pos:
-      - 8
-      - 0
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 8
-      - 1
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 8
-      - 2
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 8
-      - 3
-      bombed: true
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 8
-      - 4
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 8
-      - 5
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 8
-      - 6
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 8
-      - 7
-      bombed: false
-      flagged: false
-      revealed: false
-    - !ruby/object:Tile
-      board: *1
-      pos:
-      - 8
-      - 8
-      bombed: false
       flagged: false
       revealed: false

@@ -26,7 +26,10 @@ class Minesweeper
   end
 
   def self.load_saved_game
-    loaded_game = YAML.load(File.read("saved_game.yml"))
+    puts "Please specify the filename of the saved game you would like to use:"
+    print ">"
+    filename = gets.chomp
+    loaded_game = YAML.load(File.read("#{filename}.yml"))
   end
   
   def self.get_mode
