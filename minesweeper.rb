@@ -54,7 +54,10 @@ class Minesweeper
 
 
   def save_game
-    File.open("saved_game.yml", "w") { |file| file.write(self.to_yaml) }
+    puts "What would you like to name your saved game?"
+    print ">"
+    filename = gets.chomp
+    File.open("#{filename}.yml", "w") { |file| file.write(self.to_yaml) }
     true
   end
 
@@ -145,6 +148,10 @@ class Minesweeper
         tile.show
       when 's'
         save_game
+        if save_game
+          system("clear")
+          puts "Game has been saved. You may exit terminal now."
+        end
     end
     
   end
