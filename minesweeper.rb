@@ -17,11 +17,15 @@ class Minesweeper
     # debugger
     case mode
       when 'load'
-        
+        load_saved_game
         else
           board = Minesweeper.new(GAME_MODES[mode])
     end
 
+  end
+
+  def self.load_saved_game
+    loaded_game = YAML.load(File.read("saved_game.yml"))
   end
   
   def self.get_mode
@@ -41,21 +45,15 @@ class Minesweeper
       mode
   end
 
-  def initialize(game_mode)
-    if game_mode != 'saved_game'
-      size, bombs = game_mode
-      @board = Board.new(size, bombs)
-    else
-      load_saved_game(game_mode)
-    end
+  def initialize(game_mode)  
+    size, bombs = game_mode
+    @board = Board.new(size, bombs)
   end
 
-  def load_saved_game(saved_game)
-    YAML::load(saved_game)
-  end
+
 
   def save_game
-    saved_game = self.to_yaml
+    File.open("saved_game.yml", "w") { |file| file.write(self.to_yaml) }
     true
   end
 
@@ -146,27 +144,6 @@ class Minesweeper
     end
     
   end
-
-  #reveal:
-  # Start by supporting a single grid size: 9x9; randomly seed it with bombs. The user has two choices each turn:
-
-  # First, they can choose a square to reveal. If it contains a bomb, game over. Otherwise, it will be revealed. If none of its neighbors contains a bomb, then all the adjacent neighbors are also revealed. If any of the neighbors have no adjacent bombs, they too are revealed. Et cetera.
-
-  # The "fringe" of the revealed area is squares all adjacent to a bomb (or corner). The fringe should be revealed and contain the count of adjacent bombs.
-
-  # The goal of the game is to reveal all the bomb-free squares; at this point the game ends and the player wins.
-
-  # Flag bomb:
-  # The user may also flag a square as containing a bomb. A flagged square cannot be revealed unless it is unflagged first. It's possible to flag a square incorrectly, so the behavior should be the same regardless of whether there's a bomb in that square.
-
-  # Flags are there to help the user keep track of bombs and do not factor into the win condition. Once every square that isn't a bomb has been revealed, the player wins regardless of whether they've flagged all the remaining squares.
-
-  # User interaction
-  # You decide how to display the current game state to the user. I recommend * for unexplored squares, _ for "interior" squares when exploring, and a one-digit number for "fringe" squares. I'd put an F for flagged spots.
-
-  # You decide how the user inputs their choice. I recommend a coordinate system. Perhaps they should prefix their choice with either "r" for reveal or "f" for flag.
-  #ex? [action, [x,y]]
-
 
 
 end
